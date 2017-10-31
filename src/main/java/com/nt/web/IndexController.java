@@ -5,9 +5,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class IndexController {
-	@RequestMapping("/")
+	@RequestMapping(value = { "/", "**/**" })
 	String home() {
 		return "Welcome to new tech!";
+	}
+
+	@RequestMapping(value = { "/ping" })
+	String ping() {
+		return "Pong.";
 	}
 
 }

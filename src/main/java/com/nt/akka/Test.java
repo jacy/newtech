@@ -18,6 +18,7 @@ public class Test extends AbstractActor {
 		ActorRef actor = actorSystem.actorOf(props, "1");
 		ActorRef actor2 = actorSystem.actorOf(props, "2");
 		actor.tell("hello world", actor2);
+		actor.tell(2, actor2);
 
 		new Thread(() -> {
 			try {
